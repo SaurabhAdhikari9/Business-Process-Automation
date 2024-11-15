@@ -1,0 +1,6 @@
+@BusinessProcessAutomation_HostAddress = http://localhost:5168
+
+GET {{BusinessProcessAutomation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
