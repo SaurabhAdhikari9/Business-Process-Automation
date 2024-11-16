@@ -10,4 +10,9 @@
     <ProjectReference Include="..\BusinessProcessAutomation.Domain\BusinessProcessAutomation.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\" />
+    <Folder Include="Interface\IServices\" />
+  </ItemGroup>
+
 </Project>
