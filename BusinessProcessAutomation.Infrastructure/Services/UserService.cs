@@ -50,19 +50,51 @@ namespace BusinessProcessAutomation.Infrastructure.Services
             _userRepository.SaveChanges();
         }
 
-        public void GetAll()
+        public List<UserDTO> GetAll()
         {
-            throw new NotImplementedException();
+            return _userRepository.GetAll().Select(p => new UserDTO
+            {
+                Id = p.Id,
+                FirstName = p.FirstName,
+                LastName = p.LastName,
+                Email = p.Email,
+                Comment = p.Comment,
+                GitHubUrl = p.GitHubUrl,
+                LinkedInUrl = p.LinkedInUrl,
+                PhoneNumber = p.PhoneNumber,
+                TimeInterval = p.TimeInterval
+
+            }).ToList();
+
         }
 
-        public void GetById(int id)
+        public UserDTO GetById(int id)
         {
-            throw new NotImplementedException();
+            var user = _userRepository.GetById(id);
+            return new UserDTO
+            {
+                Id = user.Id,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email  = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                GitHubUrl = user.GitHubUrl,
+                LinkedInUrl = user.GitHubUrl,
+                TimeInterval = user.TimeInterval,
+                Comment = user.Comment
+            };
         }
 
-        public void RemoveUser()
+        public void RemoveUser(int id)
         {
-            throw new NotImplementedException();
+            var user = _userRepository.GetById(id);
+            if (user != null)
+            {
+                _userRepository.Delete(user);
+                _userRepository.SaveChanges();
+                return;
+            }
+            throw new Exception("user not found");
         }
     }
 }

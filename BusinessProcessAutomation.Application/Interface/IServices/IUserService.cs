@@ -5,9 +5,9 @@ namespace BusinessProcessAutomation.Application.Interface.IServices
     public interface IUserService
     {
         void AddOrUpdateUser(AddOrUpdateUserDTO user);
-        void RemoveUser();
-        void GetById(int id);
-        void GetAll();
+        void RemoveUser(int id);
+        UserDTO GetById(int id);
+        List<UserDTO> GetAll();
 
     }
 }

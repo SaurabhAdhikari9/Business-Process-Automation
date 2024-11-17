@@ -22,5 +22,19 @@ namespace BusinessProcessAutomation.Controllers
             _userService.AddOrUpdateUser(user);
             return Ok(user);
         }
+
+        [HttpGet]
+        public IActionResult GetAllUsers() 
+        {
+            var users = _userService.GetAll();
+            return Ok(users);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult RemoveUser(int id)
+        {
+            _userService.RemoveUser(id);
+            return Ok("User has been removed successfully");
+        }
     }
 }
