@@ -1,4 +1,5 @@
-﻿using BusinessProcessAutomation.Application.Common.DTOs;
+﻿using BusinessProcessAutomation.Application.Common.CustomeExceptions;
+using BusinessProcessAutomation.Application.Common.DTOs;
 using BusinessProcessAutomation.Application.Interface.IRepositories;
 using BusinessProcessAutomation.Application.Interface.IServices;
 using BusinessProcessAutomation.Domain.Entities;
@@ -94,7 +95,7 @@ namespace BusinessProcessAutomation.Infrastructure.Services
                 _userRepository.SaveChanges();
                 return;
             }
-            throw new Exception("user not found");
+            throw new NotFoundException("user not found");
         }
     }
 }

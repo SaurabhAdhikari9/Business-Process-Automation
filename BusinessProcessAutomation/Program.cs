@@ -14,6 +14,8 @@ builder.Services.ConfigureDependencies();
 
 var app = builder.Build();
 
+app.MiddlewareInjection();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
