@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace BusinessProcessAutomation.Application.Common.DTOs
 {
@@ -7,6 +8,7 @@ namespace BusinessProcessAutomation.Application.Common.DTOs
         public required string FirstName { get; set; }
         public required string LastName { get; set; }
         public string? PhoneNumber { get; set; } = string.Empty;
+        [RegularExpression("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$", ErrorMessage ="Invalid email address.")]
         public required string Email { get; set; }
         public string? TimeInterval { get; set; } = string.Empty;
         public string? LinkedInUrl { get; set; } = string.Empty;
