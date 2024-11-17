@@ -71,7 +71,7 @@ namespace BusinessProcessAutomation.Infrastructure.Services
 
         public UserDTO GetById(int id)
         {
-            var user = _userRepository.GetById(id);
+            var user = _userRepository.GetById(id) ?? throw new NotFoundException("User not found.");
             return new UserDTO
             {
                 Id = user.Id,
@@ -95,7 +95,7 @@ namespace BusinessProcessAutomation.Infrastructure.Services
                 _userRepository.SaveChanges();
                 return;
             }
-            throw new NotFoundException("user not found");
+            throw new NotFoundException("User not found");
         }
     }
 }

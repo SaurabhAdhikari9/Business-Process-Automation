@@ -23,7 +23,7 @@ namespace BusinessProcessAutomation.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllUsers() 
+        public IActionResult GetAllUsers()
         {
             var users = _userService.GetAll();
             return Ok(users);
@@ -34,6 +34,13 @@ namespace BusinessProcessAutomation.Controllers
         {
             _userService.RemoveUser(id);
             return Ok("User has been removed successfully");
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult GetUser(int id)
+        {
+            var user =  _userService.GetById(id);
+            return Ok(user);
         }
     }
 }
