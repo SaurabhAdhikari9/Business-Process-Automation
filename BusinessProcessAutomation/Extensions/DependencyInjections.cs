@@ -11,7 +11,7 @@ namespace BusinessProcessAutomation.Extensions
         {
             #region Repository Injection
             services.AddTransient(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-            services.AddTransient<IUserRepository,  IUserRepository>();
+            services.AddTransient<IUserRepository,  UserRepository>();
             #endregion
 
             #region Service Injection
