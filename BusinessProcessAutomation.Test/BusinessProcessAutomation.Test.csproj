@@ -23,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BusinessProcessAutomation.Application\BusinessProcessAutomation.Application.csproj" />
     <ProjectReference Include="..\BusinessProcessAutomation.Infrastructure\BusinessProcessAutomation.Infrastructure.csproj" />
+    <ProjectReference Include="..\BusinessProcessAutomation\BusinessProcessAutomation.csproj" />
   </ItemGroup>
 
   <ItemGroup>
